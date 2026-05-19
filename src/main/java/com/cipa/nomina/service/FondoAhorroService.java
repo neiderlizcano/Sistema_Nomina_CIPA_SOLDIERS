@@ -2,13 +2,12 @@ package com.cipa.nomina.service;
 
 import com.cipa.nomina.exception.NominaException;
 import com.cipa.nomina.model.Empleado;
-import com.cipa.nomina.model.EmpleadoPorHoras;
 
 /**
  * Servicio encargado de calcular el fondo de ahorro.
  *
- * En este caso es solo aplicable para empleados por horas con más de 1 año en la empresa
- * y únicamente si el empleado acepta acceder al fondo.
+ * Solo aplica para empleados que puedan acceder al fondo,
+ * tengan más de 1 año en la empresa y acepten este beneficio.
  */
 public class FondoAhorroService {
 
@@ -21,11 +20,7 @@ public class FondoAhorroService {
             return 0;
         }
 
-        if (!(empleado instanceof EmpleadoPorHoras)) {
-            return 0;
-        }
-
-        if (empleado.getAniosEnEmpresa() <= 1) {
+        if (!empleado.puedeAccederFondoAhorro()) {
             return 0;
         }
 

@@ -3,11 +3,13 @@ package com.cipa.nomina.model;
 /**
  * Representa a un empleado que trabaja por horas.
  *
- * Segun el enuenciado este tipo de empleado recibe un pago según las horas trabajadas.
- * Si trabaja más de 40 horas, las horas adicionales se pagan
- * a 1.5 veces la tarifa normal y no recibe bonos
+ * Según el enunciado, este tipo de empleado recibe un pago según las horas trabajadas.
+ * Si trabaja más de 40 horas, las horas adicionales se pagan a 1.5 veces
+ * la tarifa normal y no recibe bonos.
+ *
+ * Además, si tiene más de 1 año en la empresa, puede acceder al fondo de ahorro
+ * siempre que acepte ese beneficio.
  */
-
 public class EmpleadoPorHoras extends Empleado {
 
     private static final int LIMITE_HORAS_NORMALES = 40;
@@ -45,6 +47,11 @@ public class EmpleadoPorHoras extends Empleado {
     @Override
     public double calcularBeneficios() {
         return 0;
+    }
+
+    @Override
+    public boolean puedeAccederFondoAhorro() {
+        return getAniosEnEmpresa() > 1;
     }
 
     public double getHorasTrabajadas() {

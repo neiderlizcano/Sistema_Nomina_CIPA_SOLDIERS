@@ -61,4 +61,8 @@ public abstract class Empleado {
     public int getAniosEnEmpresa() {
         return aniosEnEmpresa;
     }
+
+    public boolean puedeAccederFondoAhorro() {
+        return false;
+    }
 }
