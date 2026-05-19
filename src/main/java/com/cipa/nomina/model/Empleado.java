@@ -15,8 +15,6 @@ public abstract class Empleado {
     private final String nombre;
     private final int aniosEnEmpresa;
 
-    private static final double PORCENTAJE_SEGURIDAD_SOCIAL_Y_PENSION = 0.04;
-
     public Empleado(String id, String nombre, int aniosEnEmpresa) {
         validarTextoObligatorio(id, "El id del empleado es obligatorio.");
         validarTextoObligatorio(nombre, "El nombre del empleado es obligatorio.");
@@ -34,22 +32,14 @@ public abstract class Empleado {
 
     public abstract double calcularBeneficios();
 
-    public double calcularDeducciones() {
-        return calcularSalarioBruto() * PORCENTAJE_SEGURIDAD_SOCIAL_Y_PENSION;
-    }
-
-    public double calcularSalarioNeto() {
-        double salarioNeto = calcularSalarioBruto() + calcularBeneficios() - calcularDeducciones();
-
-        if (salarioNeto < 0) {
-            throw new NominaException("El salario neto no puede ser negativo.");
-        }
-
-        return salarioNeto;
-    }
-
     protected void validarValorNoNegativo(double valor, String mensaje) {
         if (valor < 0) {
+            throw new NominaException(mensaje);
+        }
+    }
+
+    protected void validarValorMayorQueCero(double valor, String mensaje) {
+        if (valor <= 0) {
             throw new NominaException(mensaje);
         }
     }
