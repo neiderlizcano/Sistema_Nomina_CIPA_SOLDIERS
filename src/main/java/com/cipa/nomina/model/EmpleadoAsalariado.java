@@ -15,7 +15,7 @@ public class EmpleadoAsalariado extends Empleado {
 
     public EmpleadoAsalariado(String id, String nombre, int aniosEnEmpresa, double salarioMensual) {
         super(id, nombre, aniosEnEmpresa);
-        validarValorNoNegativo(salarioMensual, "El salario mensual no puede ser negativo.");
+        validarValorMayorQueCero(salarioMensual, "El salario mensual debe ser mayor que cero.");
         this.salarioMensual = salarioMensual;
     }
 

@@ -23,7 +23,7 @@ public class EmpleadoPorHoras extends Empleado {
         super(id, nombre, aniosEnEmpresa);
 
         validarValorNoNegativo(horasTrabajadas, "Las horas trabajadas no pueden ser negativas.");
-        validarValorNoNegativo(tarifaPorHora, "La tarifa por hora no puede ser negativa.");
+        validarValorMayorQueCero(tarifaPorHora, "La tarifa por hora debe ser mayor que cero.");
 
         this.horasTrabajadas = horasTrabajadas;
         this.tarifaPorHora = tarifaPorHora;
