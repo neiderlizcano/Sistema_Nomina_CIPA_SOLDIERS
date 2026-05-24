@@ -1,12 +1,5 @@
 package com.cipa.nomina.service;
 
-/**
- * Esta clase es el resultado final del cálculo de nómina de un empleado.
- *
- * Esta clase permite mostrar la información de forma ordenada,
- * separando salario bruto, beneficios, deducciones, fondo de ahorro
- * y salario neto.
- */
 public class ResultadoNomina {
 
     private final String idEmpleado;
