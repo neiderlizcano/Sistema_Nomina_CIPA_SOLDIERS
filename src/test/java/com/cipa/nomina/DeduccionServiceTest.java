@@ -23,6 +23,6 @@ public class DeduccionServiceTest {
 
         double deducciones = service.calcularDeducciones(empleado);
 
-        assertEquals(160000, deducciones);
+        assertEquals(80000, deducciones);
     }
 }

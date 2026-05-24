@@ -2,6 +2,7 @@ package com.cipa.nomina.service;
 
 import com.cipa.nomina.exception.NominaException;
 import com.cipa.nomina.model.Empleado;
+import com.cipa.nomina.model.EmpleadoAsalariado;
 
 /**
  * En esta clase esta el servicio principal encargado de calcular la nómina completa.
@@ -60,8 +61,12 @@ public class CalculadoraNomina {
     }
 
     private void validarEmpleado(Empleado empleado) {
-        if (empleado == null) {
-            throw new NominaException("El empleado es obligatorio para calcular la nómina.");
-        }
+    if (empleado == null) {
+        throw new NominaException("El empleado es obligatorio para calcular la nómina.");
     }
+}
+
+public String generarResumenNomina(EmpleadoAsalariado empleado) {
+    return "Empleado: " + empleado.getNombre();
+}
 }

@@ -1,9 +1,9 @@
 package com.cipa.nomina;
 
 import com.cipa.nomina.model.EmpleadoAsalariado;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class EmpleadoAsalariadoTest {
 
@@ -39,7 +39,4 @@ public class EmpleadoAsalariadoTest {
         assertEquals(1000000, beneficios);
     }
 
-    private void assertEquals(int i, double beneficios) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 }
