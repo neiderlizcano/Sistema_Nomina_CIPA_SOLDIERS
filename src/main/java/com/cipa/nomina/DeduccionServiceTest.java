@@ -1,13 +1,28 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.cipa.nomina;
 
-/**
- *
- * @author Anton
- */
+import com.cipa.nomina.model.EmpleadoAsalariado;
+import com.cipa.nomina.service.DeduccionService;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class DeduccionServiceTest {
-    
+
+    @Test
+    void debeCalcularDeduccionesCorrectamente() {
+
+        EmpleadoAsalariado empleado =
+                new EmpleadoAsalariado(
+                        "1",
+                        "Antonio",
+                        2,
+                        2000000
+                );
+
+        DeduccionService service = new DeduccionService();
+
+        double deducciones = service.calcularDeducciones(empleado);
+
+        assertEquals(160000, deducciones);
+    }
 }
